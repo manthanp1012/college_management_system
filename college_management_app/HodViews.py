@@ -437,25 +437,25 @@ def edit_student(request, student_id):
 	return render(request, "hod_template/edit_student_template.html", context)
 
 
-# def get_session_year_choices():  #reload is required to execute this
-#     try:
-#         session_years = SessionYearModel.objects.all()
-#         session_year_list = [
-#             (session_year.id, f"{session_year.session_start_year} to {session_year.session_end_year}")
-#             for session_year in session_years
-#         ]
-#     except:
-#         session_year_list = []
+def get_session_year_choices():  #reload is required to execute this
+    try:
+        session_years = SessionYearModel.objects.all()
+        session_year_list = [
+            (session_year.id, f"{session_year.session_start_year} to {session_year.session_end_year}")
+            for session_year in session_years
+        ]
+    except:
+        session_year_list = []
 
-#     return session_year_list
-# def get_course_choices():
-# 	try:
-# 		print("yE")
-# 		courses = Courses.objects.all()
-# 		course_list = [(course.id, course.course_name) for course in courses]
-# 	except:
-# 		course_list = []
-# 	return course_list
+    return session_year_list
+def get_course_choices():
+	try:
+		print("yE")
+		courses = Courses.objects.all()
+		course_list = [(course.id, course.course_name) for course in courses]
+	except:
+		course_list = []
+	return course_list
 def edit_student_save(request):
 	if request.method != "POST":
 		return HttpResponse("Invalid Method!")
