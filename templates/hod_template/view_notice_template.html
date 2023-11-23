@@ -9,16 +9,24 @@
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff; /* AliceBlue background color */
             text-align: center; /* Center align text */
-            padding: 0px; /* Add padding to center content */
+            padding: 30px; /* Add padding to center content */
             margin: 0%;
         }
+        div {
+            max-width: 600px; /* Set max width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #fff; /* White background for the form container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           }
         .sidebar {
 
             width: 200px;
             /* Adjust width as needed */
             /* position: fixed;*/
             height: 100%; 
-            background-color: #cfd8dd;
+            background-color: #f0f8ff;
 
             padding-top: 0px; 
             text-align: left;
@@ -67,6 +75,11 @@
         }
         button:hover {
             background-color: #0000cc; /* Darker blue on hover */
+        }
+        a {
+            color: #008000; /* Green color for links */
+            text-decoration: none; /* Remove underline from links */
+            font-size: 18px;
         }
         table {
             width: 80%;
@@ -117,9 +130,9 @@
 
     </div>
 
-    <div class="content"></div>
-    <button class="adminButto"><a style="text-decoration:none; color:#fff" href="/admin_home">Admin 
-        Dashboard</a></button>    <br><br>
+    <div class="content">
+    <a href="\admin_home">Admin Dashboard</a>
+        <br><br>    
     <h1>Notice History</h1>
     <table>
         <thead>
@@ -135,6 +148,6 @@
             {% endfor %}
         </tbody>
     </table>
-    
+</div>
 </body>
 </html>

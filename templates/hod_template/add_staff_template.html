@@ -10,8 +10,17 @@
            font-family: 'Arial', sans-serif;
            background-color: #f0f8ff; /* AliceBlue background color */
            text-align: center; /* Center align text */
-           padding: 50px; /* Add padding to center content */
+           padding: 30px;
+           margin: 0; /* Add padding to center content */
        }
+       div {
+        max-width: 600px; /* Set max width for the container */
+        margin: 0 auto; /* Center the container horizontally */
+        background-color: #fff; /* White background for the form container */
+        padding: 20px; /* Add padding to the container */
+        border-radius: 10px; /* Add border-radius for rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    }
        a {
            color: #008000; /* Green color for links */
            text-decoration: none; /* Remove underline from links */
@@ -50,13 +59,11 @@
            background-color: #0000cc; /* Darker blue on hover */
        }
        .sidebar {
-
-        width: 200px; /* Adjust width as needed */
-        position: fixed;
-        height: 100%;
-        background-color: #cfd8dd;
-        padding-top: 20px;
-        float: left; /* Float sidebar to the left */
+        width: 200px;
+        background-color: #f0f8ff;
+        padding-top: 0px;
+        float: left;
+        text-align: left;
 
     }
     .sidebar ul {
@@ -82,33 +89,41 @@
         background-color: #e8d5d5;
         
     }
+    .content {
+        padding-top: 30px;
+    }
 </style>
 </head>
 <body>
-  <div class="sidebar">
+    <div class="sidebar">
 
-    <ul>
+        <ul>
 
-        <li><a href="/add_student" style="text-decoration: none; color: #333;">Add Student</a></li>
-        <li><a href="/manage_student" style="text-decoration: none; color: #333;">Manage Student</a></li>
-        <li><a href="/add_staff" style="text-decoration: none; color: #333;">Add Staff</a></li>
-        <li><a href="/manage_staff" style="text-decoration: none; color: #333;">Manage Staff</a></li>
+            <li><a href="/add_student" style="text-decoration: none; color: #333;">Add Student</a></li>
+            <li><a href="/manage_student" style="text-decoration: none; color: #333;">Manage Student</a></li>
+            <li><a href="/add_staff" style="text-decoration: none; color: #333;">Add Staff</a></li>
+            <li><a href="/manage_staff" style="text-decoration: none; color: #333;">Manage Staff</a></li>
 
-        <li><a href="/add_session" style="text-decoration: none; color: #333;">Add Session</a></li>
+            <li><a href="/add_session" style="text-decoration: none; color: #333;">Add Session</a></li>
 
-        <li><a href="/manage_session" style="text-decoration: none; color: #333;">Manage Session</a></li>
+            <li><a href="/manage_session" style="text-decoration: none; color: #333;">Manage Session</a></li>
 
-        <li><a href="/add_course" style="text-decoration: none; color: #333;">Add Course</a></li>
+            <li><a href="/add_course" style="text-decoration: none; color: #333;">Add Course</a></li>
 
-        <li><a href="/manage_course" style="text-decoration: none; color: #333;">Manage Course</a></li>
+            <li><a href="/manage_course" style="text-decoration: none; color: #333;">Manage Course</a></li>
 
-        <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
+            <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
 
-        <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+            <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+            <li><a href="/student_leave_view" style="text-decoration: none; color: #333;">Student Leave View</a></li>
+            <li><a href="/staff_leave_view" style="text-decoration: none; color: #333;">Staff Leave View</a></li>
+            <li><a href="/add_notice" style="text-decoration: none; color: #333;">Add Notice</a></li>
+            <li><a href="/view_notice" style="text-decoration: none; color: #333;">View Notice History</a></li>
 
-    </ul>
-
-</div>
+        </ul>
+    
+    </div>
+    <div class="content">
 <a href="\admin_home">Admin Dashboard</a>
 <br><br>
 <h1>Add Staff</h1>
@@ -144,5 +159,6 @@
 </div>
 <button type="submit">Submit</button>
 </form>
+</div>
 </body>
 </html>

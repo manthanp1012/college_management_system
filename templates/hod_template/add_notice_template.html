@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff; /* AliceBlue background color */
             text-align: center; /* Center align text */
-            padding: 0px; /* Add padding to center content */
+            padding: 30px; /* Add padding to center content */
             margin: 0%;
         }
         a {
@@ -45,12 +45,19 @@
         button:hover {
             background-color: #18a1b7e6; /* Darker blue on hover */
         }
+        div {
+            max-width: 600px; /* Set max width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #fff; /* White background for the form container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           }
         .sidebar {
     
          width: 200px; /* Adjust width as needed */
-         position: fixed;
          height: 100%;
-         background-color: #cfd8dd;
+         background-color: #f0f8ff;
          padding-top: 0px;
          text-align: left;
          float: left; /* Float sidebar to the left */
@@ -80,7 +87,7 @@
          
      }
      .content {
-        padding-top: 20px;
+        padding-top: 35px;
      }
     </style>
 </head>
@@ -105,23 +112,27 @@
             <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
 
             <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+            <li><a href="/student_leave_view" style="text-decoration: none; color: #333;">Student Leave View</a></li>
+            <li><a href="/staff_leave_view" style="text-decoration: none; color: #333;">Staff Leave View</a></li>
+            <li><a href="/add_notice" style="text-decoration: none; color: #333;">Add Notice</a></li>
+            <li><a href="/view_notice" style="text-decoration: none; color: #333;">View Notice History</a></li>
 
         </ul>
 
     </div>
     <div class="content">
-    <button class="adminButto"><a style="text-decoration:none; color:#fff" class="navbar-brand" href="/admin_home">Admin Dashboard</a></button>
-<br><br>
+        <a href="\admin_home">Admin Dashboard</a>
+        <br><br>
 <h2>Add Notice</h2><br><br>
     <form method="post" action="{% url 'add_notice_save' %}">
         {% csrf_token %}
-        <div class="mb-3">
+        
           <label for="notice" class="form-label">Notice</label>
           <textarea id="notice" name="notice" rows="6" cols="50">
             </textarea>  <br><br>        
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-    </div>
+    
 
 </body>
 </html>

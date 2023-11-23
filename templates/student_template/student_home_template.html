@@ -31,9 +31,10 @@
         position: fixed;
         height: 100%;
         background-color: #cfd8dd;
-        padding-top: 0px;
+        padding: 0px;
         float: left;
         text-align: left;
+        margin: 0%;
         /* Float sidebar to the left */
 
     }
@@ -52,6 +53,7 @@
 
         list-style-type: none;
         padding: 0;
+        margin: 0%;
 
 
     }
@@ -95,8 +97,16 @@
     <div class="sidebar">
 
         <ul>
-            <header><b><a href="/student_profile">{{user}}</a></b></header>
-            <br><br>
+            <button style=" background-color: #802600;
+            margin:0%;
+            border: none;
+            color: rgb(208, 219, 123);
+            padding: 10px 52px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;" class="btn btn-success"><a href="/logout_user">Logout</a></button>
+<br><br>
             <li><a href="/student_apply_leave" style="text-decoration: none; color: #333;">Apply Leave</a></li>
             <li><a href="/student_view_leave" style="text-decoration: none; color: #333;">View All Leaves</a></li>
             <li><a href="/student_view_result" style="text-decoration: none; color: #333;">View Result</a></li>
@@ -111,25 +121,17 @@
     <table>
         <thead>
             <tr>
-                <th>Total Attendence</th>
-                <th>Present Days</th>
-                <th>Absent Days</th>
+                
                 <th>Total Subjects</th>
                 <th>Subject Names</th>
-                <th>Data Present</th>
-                <th>Data Absent</th>
                 <th>Course</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{total_attendance}}</td>
-                <td>{{attendance_present}}</td>
-                <td>{{attendance_absent}}</td>
+                
                 <td>{{total_subjects}}</td>
                 <td>{{subject_name}}</td>
-                <td>{{data_present}}</td>
-                <td>{{data_absent}}</td>
                 <td>{{course_obj}}</td>
             </tr>
             

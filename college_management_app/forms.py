@@ -1,10 +1,8 @@
 from django import forms
 from .models import Courses, SessionYearModel
 
-
 class DateInput(forms.DateInput):
 	input_type = "date"
-
 
 class AddStudentForm(forms.Form):
 	email = forms.EmailField(label="Email",
@@ -29,7 +27,6 @@ class AddStudentForm(forms.Form):
 							max_length=50,
 							widget=forms.TextInput(attrs={"class":"form-control"}))
 
-	#For Displaying Courses
 	try:
 		courses = Courses.objects.all()
 		course_list = []
@@ -39,7 +36,6 @@ class AddStudentForm(forms.Form):
 	except:
 		course_list = []
 	
-	#For Displaying Session Years
 	try:
 		session_years = SessionYearModel.objects.all()
 		session_year_list = []
@@ -68,8 +64,6 @@ class AddStudentForm(forms.Form):
 								required=False,
 								widget=forms.FileInput(attrs={"class":"form-control"}))
 
-
-
 class EditStudentForm(forms.Form):
 	email = forms.EmailField(label="Email",
 							max_length=50,
@@ -90,7 +84,6 @@ class EditStudentForm(forms.Form):
 							max_length=50,
 							widget=forms.TextInput(attrs={"class":"form-control"}))
 
-	# For Displaying Courses
 	try:
 		courses = Courses.objects.all()
 		course_list = []
@@ -100,7 +93,6 @@ class EditStudentForm(forms.Form):
 	except:
 		course_list = []
 
-	# For Displaying Session Years
 	try:
 		session_years = SessionYearModel.objects.all()
 		session_year_list = []

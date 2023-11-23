@@ -14,13 +14,16 @@
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff;
-            /* AliceBlue background color */
-            /* text-align: center; */
-            /* Center align text */
-            padding: 50px;
-            /* Add padding to center content */
+            padding: 30px;
         }
-        
+        div {
+            max-width: 600px; /* Set max width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #fff; /* White background for the form container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           }
 
         a {
             color: #008000;
@@ -58,31 +61,15 @@
             margin-bottom: 20px;
             /* Add margin to space input fields */
         }
-
-        button {
-            background-color: #c5c8dc;
-            /* Navy color for button */
-            color: #ffffff;
-            /* White color for button text */
-            padding: 10px 20px;
-            /* Adjust padding as needed */
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #18a1b7e6;
-            /* Darker blue on hover */
-        }
-
+        
         .sidebar {
 
             width: 200px;
             /* Adjust width as needed */
             /* position: fixed;*/
             height: 100%; 
-           
-            padding-top: 37px; 
+           background-color: #f0f8ff;
+            padding-top: 20px; 
             float: left;
             /* Float sidebar to the left */
 
@@ -114,13 +101,6 @@
 
         }
 
-        .content {
-
-            margin-left: 220px;
-            /* Adjust margin-left to include sidebar width */
-
-        }
-
         .table-container {
 
             margin-top: 20px;
@@ -145,7 +125,7 @@
 
             border: 1px solid #ddd;
 
-            text-align: left;
+            text-align: center;
 
         }
 
@@ -159,16 +139,31 @@
             display: block;
             margin: auto;
         }
+        .content {
+            padding: 30px;
+        }
+        .logout {
+            text-align: right;
+        }
     </style>
 
 </head>
 
 <body>
-
+    
 
     <div class="sidebar">
 
         <ul>
+            <button style=" background-color: #802600;
+            border: none;
+            color: rgb(208, 219, 123);
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;" class="btn btn-success"><a href="/logout_user">Logout</a></button>
+<br><br>
 
             <li><a href="/add_student" style="text-decoration: none; color: #333;">Add Student</a></li>
             <li><a href="/manage_student" style="text-decoration: none; color: #333;">Manage Student</a></li>
@@ -196,8 +191,8 @@
     </div>
 
     <div class="content">
-        <button class="adminButton"><a style="text-decoration:none; color: #000" class="navbar-brand" href="/admin_home">Admin
-                Dashboard</a></button>
+        <a href="\admin_home">Admin Dashboard</a>
+        <br><br>   
 
         <table>
 

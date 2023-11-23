@@ -12,7 +12,7 @@
             /* AliceBlue background color */
             text-align: center;
             /* Center align text */
-            padding: 50px;
+            padding: 30px;
             /* Add padding to center content */
         }
 
@@ -76,54 +76,58 @@
             background-color: #0000cc;
             /* Darker blue on hover */
         }
+        div {
+            max-width: 600px; /* Set max width for the container */
+            margin: 0 auto; /* Center the container horizontally */
+            background-color: #fff; /* White background for the form container */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           }
 
         .sidebar {
-
             width: 200px;
-            /* Adjust width as needed */
-            position: fixed;
-            height: 100%;
-            background-color: #cfd8dd;
-            padding-top: 20px;
+            background-color: #f0f8ff;
+            padding-top: 0px;
             float: left;
-            /* Float sidebar to the left */
-
-        }
-
-        .sidebar ul {
-
+            text-align: left;
+           
+           }
+           .sidebar ul {
+           
             list-style-type: none;
             padding: 0;
-
-
-        }
-
-        .sidebar li {
+           
+           
+           }
+           
+           .sidebar li {
             margin-bottom: 5px;
-
-        }
-
-        .sidebar a {
+           
+           }
+           .sidebar a {
             text-decoration: none;
             color: #fff;
             display: block;
             padding: 10px;
-
-        }
-
-        .sidebar a:hover {
+           
+           }
+           .sidebar a:hover {
             background-color: #e8d5d5;
-
-        }
+            
+           }
+           .content {
+            padding-top: 30px;
+           }
         table {
-            width: 60%;
+            width: 80%;
             margin: 20px auto; /* Center the table */
             border-collapse: collapse; /* Collapse table borders */
         }
         th, td {
-            padding: 12px;
-            border: 1px solid #ddd; /* Add border to cells */
-            text-align: left; /* Align text to the left */
+            padding: 20px;
+            border: 3px solid #ddd; /* Add border to cells */
+            text-align: center; /* Align text to the left */
         }
         th {
             background-color: #000080; /* Navy color for header background */
@@ -153,10 +157,15 @@
             <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
 
             <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+            <li><a href="/student_leave_view" style="text-decoration: none; color: #333;">Student Leave View</a></li>
+            <li><a href="/staff_leave_view" style="text-decoration: none; color: #333;">Staff Leave View</a></li>
+            <li><a href="/add_notice" style="text-decoration: none; color: #333;">Add Notice</a></li>
+            <li><a href="/view_notice" style="text-decoration: none; color: #333;">View Notice History</a></li>
 
         </ul>
 
     </div>
+    <div class="content">
     <a href="\admin_home">Admin Dashboard</a>
     <br><br>
             <h2>Student Leave View</h2>
@@ -192,7 +201,7 @@
                 
             </tbody>
         </table>
-    
+    </div>
 </body>
 
 </html>

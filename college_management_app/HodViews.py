@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.urls import reverse
+from django.contrib.auth import logout, authenticate, login
+
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -87,7 +89,7 @@ def admin_home(request):
         
     return render(request, "hod_template/home_content.html",dic)
 
-
+@login_required
 def add_staff(request):
 	return render(request, "hod_template/add_staff_template.html")
 
