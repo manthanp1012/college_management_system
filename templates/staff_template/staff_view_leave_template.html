@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Leave Views</title>
+<style>
+   body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0%;
+      text-align: center;
+      
+  }
+   a {
+      color: #008000; /* Green color for links */
+      text-decoration: none; /* Remove underline from links */
+      font-size: 18px;
+      margin: 0 10px; /* Add margin to space links */
+  }
+   table {
+      width: 60%;
+      margin: 20px auto; /* Center the table */
+      border-collapse: collapse; /* Collapse table borders */
+  }
+  th, td {
+      padding: 12px;
+      border: 1px solid #ddd; /* Add border to cells */
+      text-align: left; /* Align text to the left */
+  }
+  th {
+      background-color: #000080; /* Navy color for header background */
+      color: #ffffff; /* White color for header text */
+  }
+   button {
+      background-color: #000080; /* Navy color for button */
+      color: #ffffff; /* White color for button text */
+      padding: 10px 20px; /* Adjust padding as needed */
+      border: none;
+      cursor: pointer;
+  }
+  button:hover {
+      background-color: #18a1b7e6; /* Darker blue on hover */
+  }
+
+  .sidebar {
+
+      width: 200px;
+      /* Adjust width as needed */
+      position: fixed;
+      height: 100%;
+      background-color: #cfd8dd;
+      padding-top: 0px;
+      float: left;
+      /* Float sidebar to the left */
+
+  }
+
+  .sidebar ul {
+
+      list-style-type: none;
+      padding: 0;
+
+
+  }
+
+  .sidebar li {
+      margin-bottom: 5px;
+
+  }
+
+  .sidebar a {
+   text-align: left;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 10px;
+
+  }
+
+  .sidebar a:hover {
+      background-color: #e8d5d5;
+
+  }
+  .content {
+   padding-top: 30px;
+  }
+</style>
+</head>
+<body>
+   <div class="sidebar">
+
+      <ul>
+
+         <li><a href="/staff_apply_leave" style="text-decoration: none; color: #333;">Apply Leave</a></li>
+         <li><a href="/staff_view_leave" style="text-decoration: none; color: #333;">View All Leaves</a></li>
+
+     </ul>
+  </div>
+  <div class="content">
+  <button class="adminButto"><a style="text-decoration:none; color:#fff" class="navbar-brand" href="/staff_home">Staff Dashboard</a></button>
+  
+<h1>Leave History</h1>
+<table>
+   <thead>
+       <tr>
+           <th>Date</th>
+           <th>Leave Message</th>
+           <th>Leave Status</th>
+       </tr>
+   </thead>
+   <tbody>
+       
+         {% for leave in leave_data %}
+         <tr>
+         <td>{{ leave.leave_date }}</td>
+         <td>{{ leave.leave_message }}</td>
+         <td>{% if leave.leave_status == 0 %} Pending {% elif leave.leave_status == 1 %} Approved {% else %} Rejected {% endif %}</td>
+      </tr>
+
+             {% endfor %}
+       
+   </tbody>
+</table>
+</div>
+</body>
+</html>

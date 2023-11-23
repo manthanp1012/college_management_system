@@ -1,0 +1,74 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Session</title>
+<style>
+       body {
+           font-family: 'Arial', sans-serif;
+           background-color: #f0f8ff; /* AliceBlue background color */
+           text-align: center; /* Center align text */
+           padding: 50px; /* Add padding to center content */
+       }
+       a {
+           color: #008000; /* Green color for links */
+           text-decoration: none; /* Remove underline from links */
+           font-size: 18px;
+       }
+       h2 {
+           color: #000080; /* Navy color for title */
+       }
+       form {
+           max-width: 400px; /* Set max width for the form */
+           margin: 0 auto; /* Center the form horizontally */
+           background-color: #fff; /* White background for the form */
+           padding: 20px; /* Add padding to the form */
+           border-radius: 10px; /* Add border-radius for rounded corners */
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           text-align: left; /* Align form fields to the left */
+       }
+       label {
+           display: block; /* Display labels in block */
+           margin-bottom: 5px; /* Add margin to space labels from inputs */
+           text-align: left; /* Align labels to the left */
+           color: #000080; /* Navy color for labels */
+       }
+       input {
+           width: 100%; /* Make the input fields take full width of the form */
+           padding: 8px; /* Adjust padding as needed */
+           box-sizing: border-box; /* Include padding and border in the element's total width and height */
+           margin-bottom: 10px; /* Add margin to space input fields */
+       }
+       button {
+           background-color: #000080; /* Navy color for button */
+           color: #ffffff; /* White color for button text */
+           padding: 10px 20px; /* Adjust padding as needed */
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #0000cc; /* Darker blue on hover */
+       }
+</style>
+</head>
+<body>
+<a href="\admin_home">Admin Dashboard ||</a>
+<a href="\manage_session">Manage Session</a>
+<br><br>
+<h2>Edit Session</h2>
+<form method="post" action="{% url 'edit_session_save' %}">
+       {% csrf_token %}
+<label for="session_id">Session ID:</label>
+<input type="text" id="session_id" name="session_id" placeholder="{{session_year.id}}" required>
+<label for="session_start_year">Start Year:</label>
+<input type="date" id="session_start_year" name="session_start_year" required>
+<label for="session_end_year">End Year:</label>
+<input type="date" id="session_end_year" name="session_end_year" required>
+<button type="submit">Save Changes</button>
+</form>
+</body>
+</html>

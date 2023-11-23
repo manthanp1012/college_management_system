@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notice History</title>
+<style>
+   body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0%;
+      text-align: center;
+      
+  }
+   a {
+      color: #008000; /* Green color for links */
+      text-decoration: none; /* Remove underline from links */
+      font-size: 18px;
+      margin: 0 10px; /* Add margin to space links */
+  }
+   table {
+      width: 60%;
+      margin: 20px auto; /* Center the table */
+      border-collapse: collapse; /* Collapse table borders */
+  }
+  th, td {
+      padding: 12px;
+      border: 1px solid #ddd; /* Add border to cells */
+      text-align: left; /* Align text to the left */
+  }
+  th {
+      background-color: #000080; /* Navy color for header background */
+      color: #ffffff; /* White color for header text */
+  }
+   button {
+      background-color: #000080; /* Navy color for button */
+      color: #ffffff; /* White color for button text */
+      padding: 10px 20px; /* Adjust padding as needed */
+      border: none;
+      cursor: pointer;
+  }
+  button:hover {
+      background-color: #18a1b7e6; /* Darker blue on hover */
+  }
+
+  .sidebar {
+
+      width: 200px;
+      /* Adjust width as needed */
+      position: fixed;
+      height: 100%;
+      background-color: #cfd8dd;
+      padding-top: 0px;
+      float: left;
+      /* Float sidebar to the left */
+
+  }
+
+  .sidebar ul {
+
+      list-style-type: none;
+      padding: 0;
+
+
+  }
+
+  .sidebar li {
+      margin-bottom: 5px;
+
+  }
+
+  .sidebar a {
+   text-align: left;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 10px;
+
+  }
+
+  .sidebar a:hover {
+      background-color: #e8d5d5;
+
+  }
+  .content {
+   padding-top: 30px;
+  }
+</style>
+</head>
+<body>
+   <div class="sidebar">
+
+      <ul>
+
+         <li><a href="/student_apply_leave" style="text-decoration: none; color: #333;">Apply Leave</a></li>
+         <li><a href="/student_view_leave" style="text-decoration: none; color: #333;">View All Leaves</a></li>
+         <li><a href="/student_view_result" style="text-decoration: none; color: #333;">View Result</a></li>
+         <li><a href="/student_view_notice" style="text-decoration: none; color: #333;">View Notice History</a></li>
+
+     </ul>
+  </div>
+  <div class="content">
+  <button class="adminButto"><a style="text-decoration:none; color:#fff" class="navbar-brand" href="/student_home">Student Dashboard</a></button>
+  
+<h1>Notice History</h1>
+<table>
+   <thead>
+       <tr>
+           <th>Notice</th>
+       </tr>
+   </thead>
+   <tbody>
+       
+         {% for notic in notices %}
+         <tr>
+         <td>{{ notic.notice }}</td>
+      </tr>
+
+             {% endfor %}
+       
+   </tbody>
+</table>
+</div>
+</body>
+</html>

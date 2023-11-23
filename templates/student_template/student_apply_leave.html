@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Leave Application</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        text-align: center;
+        margin: 0%;
+
+        
+    }
+
+    a {
+        color: #008000; /* Green color for links */
+        text-decoration: none; /* Remove underline from links */
+        font-size: 18px;
+        margin: 0 10px; /* Add margin to space links */
+    }
+    h1 {
+        color: #000080; /* Navy color for title */
+    }
+    form {
+        margin-top: 20px; /* Add margin to space form from the title */
+    }
+    label {
+        color: #000080; /* Navy color for labels */
+        display: block; /* Display labels in block */
+        margin-bottom: 10px; /* Add margin to space labels from inputs */
+    }
+    input {
+        width: 25%;
+        padding: 8px; /* Adjust padding as needed */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin-bottom: 20px; /* Add margin to space input fields */
+    }
+    button {
+        background-color: #000080; /* Navy color for button */
+        color: #ffffff; /* White color for button text */
+        padding: 10px 20px; /* Adjust padding as needed */
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #18a1b7e6; /* Darker blue on hover */
+    }
+
+    .sidebar {
+
+        width: 200px;
+        /* Adjust width as needed */
+        position: fixed;
+        height: 100%;
+        background-color: #cfd8dd;
+        padding-top: 0px;
+        float: left;
+        /* Float sidebar to the left */
+
+    }
+
+    .sidebar ul {
+
+        list-style-type: none;
+        padding: 0;
+
+
+    }
+
+    .sidebar li {
+        margin-bottom: 5px;
+
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding: 10px;
+
+    }
+
+    .sidebar a:hover {
+        background-color: #e8d5d5;
+
+    }
+    .content {
+        padding-top: 30px;
+       }
+</style>
+</head>
+<body>
+    <div class="sidebar">
+
+        <ul>
+
+            <li><a href="/student_apply_leave" style="text-decoration: none; color: #333;">Apply Leave</a></li>
+            <li><a href="/student_view_leave" style="text-decoration: none; color: #333;">View All Leaves</a></li>
+            <li><a href="/student_view_result" style="text-decoration: none; color: #333;">View Result</a></li>
+
+        </ul>
+
+    </div>
+    <div class="content">
+    <button class="adminButto"><a style="text-decoration:none; color:#fff" class="navbar-brand" href="/student_home">Student Dashboard</a></button>
+<h2>Apply for Leave</h2>
+<form method="post" action="{% url 'student_apply_leave_save' %}">
+        {% csrf_token %}
+<label for="leave_date">Leave Date:</label>
+<input type="date" id="leave_date" name="leave_date" required><br>
+<label for="leave_message">Leave Message:</label>
+<textarea id="leave_message" name="leave_message" rows="4" cols="37" required></textarea><br>
+<button type="submit">Apply for Leave</button>
+</form>
+</div>
+</body>
+</html>

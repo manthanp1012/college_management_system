@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Staff</title>
+<style>
+       body {
+           font-family: 'Arial', sans-serif;
+           background-color: #f0f8ff; /* AliceBlue background color */
+           text-align: center; /* Center align text */
+           padding: 50px; /* Add padding to center content */
+       }
+       a {
+           color: #008000; /* Green color for links */
+           text-decoration: none; /* Remove underline from links */
+           font-size: 18px;
+       }
+       h1 {
+           color: #000080; /* Navy color for title */
+       }
+       form {
+           max-width: 400px; /* Adjust the max width of the form as needed */
+           margin: 0 auto; /* Center the form horizontally */
+           text-align: left; /* Align form fields to the left within the form */
+       }
+       .form-group {
+           margin-bottom: 20px;
+       }
+       label {
+           color: #000080; /* Navy color for labels */
+           display: block; /* Display labels in block */
+           margin-bottom: 5px; /* Add margin to space labels from inputs */
+           text-align: left; /* Align labels to the left */
+       }
+       input {
+           width: 100%; /* Make the input fields take full width of the form */
+           padding: 8px; /* Adjust padding as needed */
+           box-sizing: border-box; /* Include padding and border in the element's total width and height */
+       }
+       button {
+           background-color: #000080; /* Navy color for button */
+           color: #ffffff; /* White color for button text */
+           padding: 10px 20px; /* Adjust padding as needed */
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #0000cc; /* Darker blue on hover */
+       }
+       .sidebar {
+
+        width: 200px; /* Adjust width as needed */
+        position: fixed;
+        height: 100%;
+        background-color: #cfd8dd;
+        padding-top: 20px;
+        float: left; /* Float sidebar to the left */
+
+    }
+    .sidebar ul {
+
+        list-style-type: none;
+        padding: 0;
+
+
+    }
+
+    .sidebar li {
+        margin-bottom: 5px;
+
+    }
+    .sidebar a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding: 10px;
+
+    }
+    .sidebar a:hover {
+        background-color: #e8d5d5;
+        
+    }
+</style>
+</head>
+<body>
+  <div class="sidebar">
+
+    <ul>
+
+        <li><a href="/add_student" style="text-decoration: none; color: #333;">Add Student</a></li>
+        <li><a href="/manage_student" style="text-decoration: none; color: #333;">Manage Student</a></li>
+        <li><a href="/add_staff" style="text-decoration: none; color: #333;">Add Staff</a></li>
+        <li><a href="/manage_staff" style="text-decoration: none; color: #333;">Manage Staff</a></li>
+
+        <li><a href="/add_session" style="text-decoration: none; color: #333;">Add Session</a></li>
+
+        <li><a href="/manage_session" style="text-decoration: none; color: #333;">Manage Session</a></li>
+
+        <li><a href="/add_course" style="text-decoration: none; color: #333;">Add Course</a></li>
+
+        <li><a href="/manage_course" style="text-decoration: none; color: #333;">Manage Course</a></li>
+
+        <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
+
+        <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+
+    </ul>
+
+</div>
+<a href="\admin_home">Admin Dashboard</a>
+<br><br>
+<h1>Add Staff</h1>
+<form method="post" action="{% url 'add_staff_save' %}">
+       {% csrf_token %}
+<div class="form-group">
+<label for="first_name">First Name</label>
+<input type="text" name="first_name" id="first_name" placeholder="Enter First Name">
+<small id="first_name" class="form-text text-muted"></small>
+</div>
+<div class="form-group">
+  <label for="last_name">Last Name</label>
+  <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter last name">
+  <small id="last_name" class="form-text text-muted"></small>
+</div>
+<div class="form-group">
+  <label for="username">Username</label>
+  <input type="text" name="username" class="form-control" id="username" placeholder="Enter username">
+  <small id="username" class="form-text text-muted"></small>
+</div>
+<div class="form-group">
+<label for="exampleInputEmail1">Email address</label>
+<input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+<small id="email" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
+<div class="form-group">
+<label for="password">Password</label>
+<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+</div>
+<div class="form-group">
+  <label for="address">Address</label>
+  <input type="text" name="address" class="form-control" id="address" placeholder="address">
+</div>
+<button type="submit">Submit</button>
+</form>
+</body>
+</html>

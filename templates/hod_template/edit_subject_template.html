@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Subject</title>
+<style>
+       body {
+           font-family: 'Arial', sans-serif;
+           background-color: #f0f8ff; /* AliceBlue background color */
+           text-align: center; /* Center align text */
+           padding: 50px; /* Add padding to center content */
+       }
+       a {
+           color: #008000; /* Green color for links */
+           text-decoration: none; /* Remove underline from links */
+           font-size: 18px;
+       }
+       h2 {
+           color: #000080; /* Navy color for title */
+       }
+       form {
+           display: inline-block; /* Display form in a block */
+           text-align: left; /* Align form fields to the left */
+           margin-top: 20px; /* Add margin to space form from the title */
+       }
+       label {
+           display: block; /* Display labels in block */
+           margin-bottom: 8px; /* Add margin to space labels from inputs */
+       }
+       input, select {
+        width: 102%;      
+        padding: 8px; /* Adjust padding as needed */
+           box-sizing: border-box; /* Include padding and border in the element's total width and height */
+           margin-bottom: 12px; /* Add margin to space input fields */
+       }
+       button {
+           background-color: #000080; /* Navy color for button */
+           color: #ffffff; /* White color for button text */
+           padding: 10px 20px; /* Adjust padding as needed */
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #0000cc; /* Darker blue on hover */
+       }
+</style>
+</head>
+<body>
+<a href="\admin_home">Admin Dashboard ||</a>
+<a href="\manage_subject">Manage Subject</a>
+<br><br>
+<h2>Edit Subject</h2>
+   {% if messages %}
+       {% for message in messages %}
+<p>{{ message }}</p>
+       {% endfor %}
+   {% endif %}
+<form method="post" action="{% url 'edit_subject_save' %}">
+       {% csrf_token %}
+<input type="hidden" name="subject_id" value="{{ id }}">
+<label for="subject">Subject Name:</label>
+<input type="text" name="subject" value="{{ subject.subject_name }}" required><br>
+<label for="course">Select Course:</label>
+<select name="course" required>
+           {% for course in courses %}
+<option value="{{ course.id }}"
+                   {% if course.id == subject.course_id.id %} selected {% endif %}>
+                   {{ course.course_name }}
+</option>
+           {% endfor %}
+</select><br>
+<label for="staff">Select Staff:</label>
+<select name="staff" required>
+           {% for staff in staffs %}
+<option value="{{ staff.id }}"
+                   {% if staff.id == subject.staff_id.id %} selected {% endif %}>
+                   {{ staff.username }}
+</option>
+           {% endfor %}
+</select><br>
+<button type="submit">Update Subject</button>
+</form>
+</body>
+</html>

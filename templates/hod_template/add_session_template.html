@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Session</title>
+<style>
+       body {
+           font-family: 'Arial', sans-serif;
+           background-color: #f0f8ff; /* AliceBlue background color */
+           text-align: center; /* Center align text */
+           padding: 50px; /* Add padding to center content */
+       }
+       a {
+           color: #008000; /* Green color for links */
+           text-decoration: none; /* Remove underline from links */
+           font-size: 18px;
+       }
+       h1 {
+           color: #000080; /* Navy color for title */
+       }
+       form {
+           margin-top: 20px; /* Add margin to space form from the title */
+       }
+       label {
+           color: #000080; /* Navy color for labels */
+           display: block; /* Display labels in block */
+           margin-bottom: 10px; /* Add margin to space labels from inputs */
+       }
+       input {
+           width: 25%;
+           padding: 8px; /* Adjust padding as needed */
+           box-sizing: border-box; /* Include padding and border in the element's total width and height */
+           margin-bottom: 20px; /* Add margin to space input fields */
+       }
+       button {
+           background-color: #000080; /* Navy color for button */
+           color: #ffffff; /* White color for button text */
+           padding: 10px 20px; /* Adjust padding as needed */
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #030a0be6; /* Darker blue on hover */
+       }
+       .sidebar {
+
+        width: 200px; /* Adjust width as needed */
+        position: fixed;
+        height: 100%;
+        background-color: #cfd8dd;
+        padding-top: 20px;
+        float: left; /* Float sidebar to the left */
+
+    }
+    .sidebar ul {
+
+        list-style-type: none;
+        padding: 0;
+
+
+    }
+
+    .sidebar li {
+        margin-bottom: 10px;
+
+    }
+    .sidebar a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding: 10px;
+
+    }
+    .sidebar a:hover {
+        background-color: #e8d5d5;
+        
+    }
+</style>
+</head>
+<body>
+    <div class="sidebar">
+
+        <ul>
+
+            <li><a href="/add_student" style="text-decoration: none; color: #333;">Add Student</a></li>
+            <li><a href="/manage_student" style="text-decoration: none; color: #333;">Manage Student</a></li>
+            <li><a href="/add_staff" style="text-decoration: none; color: #333;">Add Staff</a></li>
+            <li><a href="/manage_staff" style="text-decoration: none; color: #333;">Manage Staff</a></li>
+
+            <li><a href="/add_session" style="text-decoration: none; color: #333;">Add Session</a></li>
+
+            <li><a href="/manage_session" style="text-decoration: none; color: #333;">Manage Session</a></li>
+
+            <li><a href="/add_course" style="text-decoration: none; color: #333;">Add Course</a></li>
+
+            <li><a href="/manage_course" style="text-decoration: none; color: #333;">Manage Course</a></li>
+
+            <li><a href="/add_subject" style="text-decoration: none; color: #333;">Add Subject</a></li>
+
+            <li><a href="/manage_subject" style="text-decoration: none; color: #333;">Manage Subject</a></li>
+
+        </ul>
+
+    </div>
+<a href="\admin_home">Admin Dashboard</a>
+<br><br>
+<h1>Add Session</h1>
+<form method="post" action="{% url 'add_session_save' %}">
+       {% csrf_token %}
+<label for="session_start_year">Start Year:</label>
+<input type="date" id="session_start_year" name="session_start_year" required>
+<label for="session_end_year">End Year:</label>
+<input type="date" id="session_end_year" name="session_end_year" required><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit">Add Session</button>
+</form>
+</body>
+</html>

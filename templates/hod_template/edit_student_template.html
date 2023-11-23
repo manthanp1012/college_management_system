@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Students</title>
+<style>
+       body {
+           font-family: 'Arial', sans-serif;
+           background-color: #f0f8ff; /* AliceBlue background color */
+           text-align: center; /* Center align text */
+           padding: 50px; /* Add padding to center content */
+       }
+       a {
+           color: #008000; /* Green color for links */
+           text-decoration: none; /* Remove underline from links */
+           font-size: 18px;
+       }
+       .container {
+           max-width: 400px; /* Set max width for the container */
+           margin: 0 auto; /* Center the container horizontally */
+           background-color: #fff; /* White background for the container */
+           padding: 20px; /* Add padding to the container */
+           border-radius: 10px; /* Add border-radius for rounded corners */
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+           text-align: left; /* Align form fields to the left */
+       }
+       h2 {
+           color: #000080; /* Navy color for title */
+       }
+       form {
+        color: #000080;
+           text-align: left; /* Align form fields to the left */
+           margin-top: 10px;
+       }
+       label {
+        display: block;
+        margin-bottom: 8px;
+       }
+       input {
+        width: calc(100% - 16px);
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 12px;
+       }
+       button {
+           background-color: #000080; /* Navy color for button */
+           color: #ffffff; /* White color for button text */
+           padding: 10px 20px; /* Adjust padding as needed */
+           border: none;
+           cursor: pointer;
+       }
+       button:hover {
+           background-color: #0000cc; /* Darker blue on hover */
+       }
+</style>
+</head>
+<body>
+<a href="\admin_home">Admin Dashboard ||</a>
+<a href="\manage_student">Manage Student</a>
+<br><br>
+<div class="container">
+<h2>Edit Student</h2>
+<form method="post" action="{% url 'edit_student_save' %}" enctype="multipart/form-data">
+           {% csrf_token %}
+           {{ form.as_p }}
+<button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+</div>
+</body>
+</html>

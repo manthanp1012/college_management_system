@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            /* AliceBlue background color */
+            text-align: center;
+            /* Center align text */
+            padding: 0px;
+            margin: 0%;
+            /* Add padding to center content */
+        }
+        h1 {
+            color: #000080; /* Navy color for title */
+        }
+        form {
+            margin-top: 20px; /* Add margin to space form from the title */
+        }
+        label {
+            color: #000080; /* Navy color for labels */
+            display: block; /* Display labels in block */
+            margin-bottom: 10px; /* Add margin to space labels from inputs */
+        }
+        input,select {
+            width: 25%;
+            padding: 8px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            margin-bottom: 20px; /* Add margin to space input fields */
+        }
+    
+        a {
+            color: #008000;
+            /* Green color for links */
+            text-decoration: none;
+            /* Remove underline from links */
+            font-size: 18px;
+            margin: 0 10px;
+            /* Add margin to space links */
+        }
+    
+        .sidebar {
+    
+            width: 200px;
+            /* Adjust width as needed */
+            position: fixed;
+            height: 100%;
+            text-align: left;
+            background-color: #cfd8dd;
+            padding-top: 0px;
+            float: left;
+            /* Float sidebar to the left */
+    
+        }
+    
+        button {
+            background-color: #000080;
+            /* Navy color for button */
+            color: #ffffff;
+            /* White color for button text */
+            padding: 10px 20px;
+            /* Adjust padding as needed */
+            border: none;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #18a1b7e6;
+            /* Darker blue on hover */
+        }
+    
+        .sidebar ul {
+    
+            list-style-type: none;
+            padding: 0;
+    
+    
+        }
+    
+        .sidebar li {
+            margin-bottom: 5px;
+    
+        }
+    
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px;
+    
+        }
+    
+        .sidebar a:hover {
+            background-color: #e8d5d5;
+    
+        }
+        .content {
+            padding-top: 30px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    
+    <div class="sidebar">
+        
+
+        <ul>
+
+            <li><a href="/staff_apply_leave" style="text-decoration: none; color: #333;">Apply Leave</a></li>
+            <li><a href="/staff_view_leave" style="text-decoration: none; color: #333;">View All Leaves</a></li>
+            <li><a href="/staff_add_result" style="text-decoration: none; color: #333;">Add Result</a></li>
+
+        </ul>
+
+    </div>
+    <div class="content">
+        <button class="adminButto"><a style="text-decoration:none; color:#fff" href="/staff_home">Staff
+            Dashboard</a></button>
+    <h1>Add Student Result</h1>
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    <form method="post" action="{% url 'staff_add_result_save' %}">
+        {% csrf_token %}
+        <label for="student_list">Select Student:</label>
+        <select id="student_list" name="student_list" required>
+            {% for student in students %}
+            <option value="{{ student.admin.id }}">{{ student.admin }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="subject">Select Subject:</label>
+        <select id="subject" name="subject" required>
+            {% for subj in subjects %}
+            <option value="{{ subj.id }}">{{ subj.subject_name }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="assignment_marks">Assignment Marks:</label>
+        <input type="number" id="assignment_marks" name="assignment_marks" required><br>
+        <label for="exam_marks">Exam Marks:</label>
+        <input type="number" id="exam_marks" name="exam_marks" required><br>
+        <button type="submit">Save Result</button>
+    </form>
+</div>
+</body>
+
+</html>
